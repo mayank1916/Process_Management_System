@@ -56,7 +56,7 @@ def delete_process():
     except:
         messagebox.showerror("Error", "Invalid PID!")
 
-# Simulation (auto state changes)
+# Simulation (state changes automatically)
 def run_simulation():
     if not processes:
         return
@@ -102,7 +102,7 @@ delete_btn.grid(row=1, column=1, padx=10)
 simulate_btn = ctk.CTkButton(frame, text="Run Simulation", command=run_simulation)
 simulate_btn.grid(row=1, column=2, padx=10)
 
-# ===== TABLE STYLE =====
+# TABLE STYLE
 style = ttk.Style()
 style.theme_use("default")
 
@@ -122,7 +122,7 @@ table.heading("State", text="State")
 table.column("PID", anchor="center", width=120)
 table.column("State", anchor="center", width=300)
 
-# 🎨 Color tags
+# Color tags
 table.tag_configure("Ready", background="#1f6aa5", foreground="white")
 table.tag_configure("Running", background="#2ecc71", foreground="black")
 table.tag_configure("Waiting", background="#f39c12", foreground="black")
